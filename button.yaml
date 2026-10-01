@@ -1,0 +1,38 @@
+esphome:
+  name: button
+  friendly_name: Button
+
+esp8266:
+  board: d1_mini
+
+logger:
+
+api:
+  encryption:
+    key: "***"
+
+ota:
+  - platform: esphome
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  ap:
+    ssid: Button Fallback Hotspot
+    password: "***"
+
+captive_portal:
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: D2
+      inverted: true
+      mode:
+        input: true
+        pullup: true
+       
+    name: My Button
+    filters:
+      - delayed_on: 10ms
+      - delayed_off: 10ms
