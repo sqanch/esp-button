@@ -11,7 +11,6 @@ The button connects to Wi-Fi and can be used to trigger automations in Home Assi
  - Custom 3D-printed enclosure
  - Simple physical push button
  - Configured using ESPHome
- - Open-source hardware and configuration
 
 # Hardware
  - Wemos D1 Mini Board
@@ -32,6 +31,10 @@ The button is configured using ESPHome.
 ![Configuration](button.yaml)
 
 Change the api key and wifi credentials accordingly.
+
+# Home Assistant
+
+Once the ESP8266 is flashed with ESPHome and correctly configured, it shows up in Home Assistant under the ESPHome integration. The button can then be used as a trigger for automations, I use it to toggle the smart plug for my desk.
 
 # Photo
 ![Finished Button](picture.jpg)
